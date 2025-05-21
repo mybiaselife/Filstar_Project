@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FILSTAR REAL ESTATE BROKERAGE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+
+    <img src="FILSTAR-LOGO.png" alt="Filstar Logo">
+   
+    <h1>FILSTAR</h1>
+    <b>
+    <h4>REAL ESTATE
+        BROKERAGE
+    </h4>
+    </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contacts.html">Contacts</a>
+  </nav>
+
+  <main>
+    <!-- Welcome Section -->
+    <section>
+      <h2>Welcome to Filstar</h2>
+      <p>We are a real estate brokerage committed to delivering quality service and trust. Explore our listings, learn about our mission, and get in touch today!</p>
+    </section>
+
+    <!-- Property Listings (Edit to change listings) -->
+    <section>
+      <h2>Featured Listings</h2>
+      <div class="listing">
+        <div class="property-card">
+          <h3>3BR House in Santa Rosa</h3>
+          <p>Modern 3-bedroom home with garage, garden, and great neighborhood. ₱3.5M</p>
+        </div>
+        <div class="property-card">
+          <h3>2BR Condo in Makati</h3>
+          <p>Stylish condo perfect for young professionals. ₱5.2M</p>
+        </div>
+        <div class="property-card">
+          <h3>Lot for Sale – Tagaytay</h3>
+          <p>Peaceful 300sqm lot with stunning view. ₱1.8M</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (Edit to change testimonials)-->
+     <div>
+       <section>
+          <h2>What Our Clients Say</h2>
+          <div class="testimonial-container">
+            <div class="testimonial active">“Filstar helped me find the perfect family home in just one week. Very professional service!” – Maria L.</div>
+            <div class="testimonial">“From viewing to paperwork, the process was smooth. Highly recommend!” – James D.</div>
+            <div class="testimonial">“Excellent customer service and trustworthy advice. Thank you, Filstar!” – Anne T.</div>
+            <div class="testimonial">“They helped me sell my lot faster than I expected. Great experience.” – Mark R.</div>
+            <div class="testimonial">“Responsive and helpful throughout the buying process.” – Carla M.</div>
+         </section>
+
+     </div>
+  
+    
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>FILSTAR REAL ESTATE BROKERAGE</h3>
+        <p><strong>Address</strong><br>
+          Block 63 Lot 21 Phase 2 Golden City Sta. Rosa Laguna,<br>
+          Santa Rosa, Philippines</p>
+        <p><strong>Email:</strong> <a href="mailto:krisna.filstar@yahoo.com">krisna.filstar@yahoo.com</a></p>
+        <p><strong>Mobile No.:</strong> +63 0929 565 9588</p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100064057749235" target="_blank">Visit Our Page</a></p>
+      </div>
+      <div class="footer-column">
+        <h4>SERVICES</h4>
+        <ul>
+          <li>Help Buy Real Property</li>
+          <li>Sell Real Property</li>
+          <li>Consultations</li>
+          <li>Documentations and Services</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top: 20px; text-align: center;">&copy; 2004 FILSTAR REAL ESTATE BROKERAGE. All rights reserved.</p>
+  </footer>
+
+  <div id="contact-float">
+    <button onclick="toggleForm()" id="contact-btn">Contact Us</button>
+    <div id="contact-form" class="hidden">
+      <form action="mailto:krisna.filstar@yahoo.com" method="post" enctype="text/plain">
+        <h3>Get in Touch</h3>
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('contact-form');
+      form.classList.toggle('hidden');
+    }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const testimonials = document.querySelectorAll('.testimonial');
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active');
+        if (i === index) {
+          testimonial.classList.add('active');
+        }
+      });
+    }
+
+    function rotateTestimonials() {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    }
+
+    showTestimonial(currentIndex); // Show the first one
+    setInterval(rotateTestimonials, 2000); // Every 2 seconds
+  });
+</script>
+</body>
+</html>
